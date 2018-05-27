@@ -24,19 +24,6 @@ XMARGIN = int((WINDOWWIDTH - BOARDWIDTH * BOXSIZE) / 2)
 TOPMARGIN = WINDOWHEIGHT - (BOARDHEIGHT * BOXSIZE) * 1.1
 gameDisplay = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
 
-#if not isfile("highscore.txt"):
-#    highscore = []
-#else:
-#    with open("highscore.txt", 'r') as hs:
-#        highscore_list = json.load(hs)
-        #highscore list do something
-
-#    with open("highscore.txt", 'w') as hs:
-#        highscore_list = json.load(hs)
-#        highscore.append("HighscoreValue")
-
-
-
 
 #               R    G    B
 WHITE       = (255, 255, 255)
@@ -194,6 +181,7 @@ def main():
     global FPSCLOCK, DISPLAYSURF, BASICFONT, BIGFONT
     logger.info('Initializing game')
     pygame.init()
+    pygame.mixer.quit()
     FPSCLOCK = pygame.time.Clock()
     DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
     BASICFONT = pygame.font.Font('freesansbold.ttf', 18)
